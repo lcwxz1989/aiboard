@@ -1,0 +1,31 @@
+{
+  "resources": [
+    {
+      "id": "1",
+      "name": "OpenAI",
+      "url": "https://openai.com",
+      "description": "OpenAI is an AI research laboratory.",
+      "category": "website",
+      "tags": [
+        "AI",
+        "Research",
+        "GPT"
+      ],
+      "addedDate": "2025-03-03T18:52:42.931795+08:00",
+      "imageUrl": "/static/images/openai.png"
+    },
+    {
+      "id": "2",
+      "name": "AI News Today",
+      "url": "https://example.com/ai-news",
+      "description": "Latest news about artificial intelligence.",
+      "category": "news",
+      "tags": [
+        "News",
+        "Updates"
+      ],
+      "addedDate": "2025-03-03T18:52:42.931795+08:00",
+      "imageUrl": "/static/images/news.png"
+    }
+  ]
+}

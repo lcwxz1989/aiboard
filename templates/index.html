@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Navigation Hub</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AI Navigation Hub</h1>
+            <p>Your collection of AI websites and news resources</p>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search resources...">
+                <button id="search-button">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="websites">
+            <h2>AI Websites</h2>
+            <div class="resource-grid">
+                {{range .Websites}}
+                <div class="resource-card" data-tags="{{range .Tags}}{{.}} {{end}}">
+                    <div class="resource-image">
+                        <img src="{{.ImageURL}}" alt="{{.Name}}">
+                    </div>
+                    <div class="resource-content">
+                        <h3>{{.Name}}</h3>
+                        <p>{{.Description}}</p>
+                        <div class="resource-tags">
+                            {{range .Tags}}
+                            <span class="tag">{{.}}</span>
+                            {{end}}
+                        </div>
+                        <a href="{{.URL}}" target="_blank" class="visit-button">Visit Site</a>
+                    </div>
+                </div>
+                {{end}}
+            </div>
+        </section>
+
+        <section id="news">
+            <h2>AI News</h2>
+            <div class="resource-grid">
+                {{range .News}}
+                <div class="resource-card" data-tags="{{range .Tags}}{{.}} {{end}}">
+                    <div class="resource-image">
+                        <img src="{{.ImageURL}}" alt="{{.Name}}">
+                    </div>
+                    <div class="resource-content">
+                        <h3>{{.Name}}</h3>
+                        <p>{{.Description}}</p>
+                        <div class="resource-tags">
+                            {{range .Tags}}
+                            <span class="tag">{{.}}</span>
+                            {{end}}
+                        </div>
+                        <a href="{{.URL}}" target="_blank" class="visit-button">Read More</a>
+                    </div>
+                </div>
+                {{end}}
+            </div>
+        </section>
+
+        <section id="add-resource">
+            <h2>Add New Resource</h2>
+            <form id="resource-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="url">URL:</label>
+                    <input type="url" id="url" name="url" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="website">Website</option>
+                        <option value="news">News</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tags">Tags (comma separated):</label>
+                    <input type="text" id="tags" name="tags">
+                </div>
+                <div class="form-group">
+                    <label for="imageUrl">Image URL:</label>
+                    <input type="url" id="imageUrl" name="imageUrl">
+                </div>
+                <button type="submit">Add Resource</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 AI Navigation Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
